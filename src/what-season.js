@@ -13,16 +13,10 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function getSeason(date) {
   if (!arguments.length) return 'Unable to determine the time of year!';
-    // console.log(date);
-    // console.log(typeof(date));
-    // console.log(Date.parse(date));
-    // console.log('isDate? ', date instanceof Date);
-    if (!(date instanceof Date)) return 'Invalid date!';
+
+    if (!(date instanceof Date)) throw new Error('Invalid date!') ;
     
-    
-    // if (isNaN(Date.parse(date)) === true || typeof(date) != 'object') return "Invalid date!";
-    // const dateConvert = new Date(Date.parse(date));
-    // console.log(dateConvert);
+
     const month = date.getMonth();
     switch (month) {
         case 11 :
